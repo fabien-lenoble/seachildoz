@@ -1,3 +1,28 @@
+import selfPortrait2 from '../assets/images/gallery/mains JB1.jpeg'
+import selfPortrait3 from '../assets/images/gallery/mains corps.jpeg'
+import selfPortrait4 from '../assets/images/gallery/mains exp.jpeg'
+import selfPortrait5 from '../assets/images/gallery/pieds.jpeg'
+import selfPortrait1 from '../assets/images/gallery/visage ficelle 2.jpeg'
+
+import absence1 from '../assets/images/gallery/couple fantome 4.jpeg'
+import absence3 from '../assets/images/gallery/dos lit.jpeg'
+import absence2 from '../assets/images/gallery/homme ombre.jpeg'
+import absence4 from '../assets/images/gallery/livre.jpeg'
+
+import surreal5 from '../assets/images/gallery/ballons rouges 3.jpeg'
+import surreal4 from '../assets/images/gallery/ballons rouges.jpeg'
+import surreal3 from '../assets/images/gallery/ciel5.jpeg'
+import surreal1 from '../assets/images/gallery/mer kaway jaune.jpeg'
+import surreal2 from '../assets/images/gallery/pierre ballon.jpeg'
+
+import bodies3 from '../assets/images/gallery/detail22.jpeg'
+import bodies2 from '../assets/images/gallery/fleur qui tombe.jpeg'
+import bodies1 from '../assets/images/gallery/melon2.jpeg'
+
+import cinematic2 from '../assets/images/gallery/details 18.jpeg'
+import cinematic3 from '../assets/images/gallery/details.jpeg'
+import cinematic1 from '../assets/images/gallery/storytelleing7.jpeg'
+
 export interface GallerySeries {
   id: number
   title: string
@@ -23,11 +48,11 @@ export const gallerySeries: GallerySeries[] = [
     year: 2024,
     description: 'An intimate exploration of identity and presence through self-portraiture.',
     images: [
-      'src/assets/images/gallery/visage ficelle 2.jpeg',
-      'src/assets/images/gallery/mains JB1.jpeg',
-      'src/assets/images/gallery/mains corps.jpeg',
-      'src/assets/images/gallery/mains exp.jpeg',
-      'src/assets/images/gallery/pieds.jpeg'
+      selfPortrait1,
+      selfPortrait2,
+      selfPortrait3,
+      selfPortrait4,
+      selfPortrait5
     ]
   },
   {
@@ -36,10 +61,10 @@ export const gallerySeries: GallerySeries[] = [
     year: 2023,
     description: 'Exploring themes of absence, loss and memory through atmospheric photography.',
     images: [
-      'src/assets/images/gallery/couple fantome 4.jpeg',
-      'src/assets/images/gallery/homme ombre.jpeg',
-      'src/assets/images/gallery/dos lit.jpeg',
-      'src/assets/images/gallery/livre.jpeg'
+      absence1,
+      absence2,
+      absence3,
+      absence4
     ]
   },
   {
@@ -48,11 +73,11 @@ export const gallerySeries: GallerySeries[] = [
     year: 2023,
     description: 'Dreamlike environments that challenge perception and reality.',
     images: [
-      'src/assets/images/gallery/mer kaway jaune.jpeg',
-      'src/assets/images/gallery/pierre ballon.jpeg',
-      'src/assets/images/gallery/ciel5.jpeg',
-      'src/assets/images/gallery/ballons rouges.jpeg',
-      'src/assets/images/gallery/ballons rouges 3.jpeg'
+      surreal1,
+      surreal2,
+      surreal3,
+      surreal4,
+      surreal5
     ]
   },
   {
@@ -61,9 +86,9 @@ export const gallerySeries: GallerySeries[] = [
     year: 2022,
     description: 'Study of the human form, vulnerability, and physical presence.',
     images: [
-      'src/assets/images/gallery/melon2.jpeg',
-      'src/assets/images/gallery/fleur qui tombe.jpeg',
-      'src/assets/images/gallery/detail22.jpeg'
+      bodies1,
+      bodies2,
+      bodies3
     ]
   },
   {
@@ -72,9 +97,9 @@ export const gallerySeries: GallerySeries[] = [
     year: 2022,
     description: 'Moments captured with a cinematic sensibility and narrative quality.',
     images: [
-      'src/assets/images/gallery/storytelleing7.jpeg',
-      'src/assets/images/gallery/details 18.jpeg',
-      'src/assets/images/gallery/details.jpeg'
+      cinematic1,
+      cinematic2,
+      cinematic3
     ]
   }
 ]
