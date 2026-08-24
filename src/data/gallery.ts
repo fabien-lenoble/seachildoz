@@ -23,11 +23,11 @@ export const gallerySeries: GallerySeries[] = [
     year: 2024,
     description: 'An intimate exploration of identity and presence through self-portraiture.',
     images: [
-      'https://via.placeholder.com/800x1000?text=Gallery+1+Image+1',
-      'https://via.placeholder.com/800x1000?text=Gallery+1+Image+2',
-      'https://via.placeholder.com/800x1000?text=Gallery+1+Image+3',
-      'https://via.placeholder.com/800x1000?text=Gallery+1+Image+4',
-      'https://via.placeholder.com/800x1000?text=Gallery+1+Image+5'
+      'src/assets/images/gallery/visage ficelle 2.jpeg',
+      'src/assets/images/gallery/mains JB1.jpeg',
+      'src/assets/images/gallery/mains corps.jpeg',
+      'src/assets/images/gallery/mains exp.jpeg',
+      'src/assets/images/gallery/pieds.jpeg'
     ]
   },
   {
@@ -36,10 +36,10 @@ export const gallerySeries: GallerySeries[] = [
     year: 2023,
     description: 'Exploring themes of absence, loss and memory through atmospheric photography.',
     images: [
-      'https://via.placeholder.com/800x1000?text=Gallery+2+Image+1',
-      'https://via.placeholder.com/800x1000?text=Gallery+2+Image+2',
-      'https://via.placeholder.com/800x1000?text=Gallery+2+Image+3',
-      'https://via.placeholder.com/800x1000?text=Gallery+2+Image+4'
+      'src/assets/images/gallery/couple fantome 4.jpeg',
+      'src/assets/images/gallery/homme ombre.jpeg',
+      'src/assets/images/gallery/dos lit.jpeg',
+      'src/assets/images/gallery/livre.jpeg'
     ]
   },
   {
@@ -48,11 +48,11 @@ export const gallerySeries: GallerySeries[] = [
     year: 2023,
     description: 'Dreamlike environments that challenge perception and reality.',
     images: [
-      'https://via.placeholder.com/800x1000?text=Gallery+3+Image+1',
-      'https://via.placeholder.com/800x1000?text=Gallery+3+Image+2',
-      'https://via.placeholder.com/800x1000?text=Gallery+3+Image+3',
-      'https://via.placeholder.com/800x1000?text=Gallery+3+Image+4',
-      'https://via.placeholder.com/800x1000?text=Gallery+3+Image+5'
+      'src/assets/images/gallery/mer kaway jaune.jpeg',
+      'src/assets/images/gallery/pierre ballon.jpeg',
+      'src/assets/images/gallery/ciel5.jpeg',
+      'src/assets/images/gallery/ballons rouges.jpeg',
+      'src/assets/images/gallery/ballons rouges 3.jpeg'
     ]
   },
   {
@@ -61,9 +61,9 @@ export const gallerySeries: GallerySeries[] = [
     year: 2022,
     description: 'Study of the human form, vulnerability, and physical presence.',
     images: [
-      'https://via.placeholder.com/800x1000?text=Gallery+4+Image+1',
-      'https://via.placeholder.com/800x1000?text=Gallery+4+Image+2',
-      'https://via.placeholder.com/800x1000?text=Gallery+4+Image+3'
+      'src/assets/images/gallery/melon2.jpeg',
+      'src/assets/images/gallery/fleur qui tombe.jpeg',
+      'src/assets/images/gallery/detail22.jpeg'
     ]
   },
   {
@@ -72,10 +72,9 @@ export const gallerySeries: GallerySeries[] = [
     year: 2022,
     description: 'Moments captured with a cinematic sensibility and narrative quality.',
     images: [
-      'https://via.placeholder.com/800x1000?text=Gallery+5+Image+1',
-      'https://via.placeholder.com/800x1000?text=Gallery+5+Image+2',
-      'https://via.placeholder.com/800x1000?text=Gallery+5+Image+3',
-      'https://via.placeholder.com/800x1000?text=Gallery+5+Image+4'
+      'src/assets/images/gallery/storytelleing7.jpeg',
+      'src/assets/images/gallery/details 18.jpeg',
+      'src/assets/images/gallery/details.jpeg'
     ]
   }
 ]

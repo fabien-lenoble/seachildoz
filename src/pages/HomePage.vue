@@ -18,7 +18,7 @@
 
             <nav class="hero-navigation">
               <router-link to="/work" class="nav-item">WORK</router-link>
-              <router-link to="/expo-photo" class="nav-item">EXPO PHOTO</router-link>
+              <router-link to="/galerie" class="nav-item">EXPO PHOTO</router-link>
               <a href="https://www.etsy.com" target="_blank" class="nav-item">SHOP</a>
               <router-link to="/about" class="nav-item">À PROPOS DE MOI</router-link>
             </nav>

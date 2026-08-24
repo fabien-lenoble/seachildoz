@@ -12,7 +12,7 @@
 
       <ul :class="['nav-links', { open: mobileMenuOpen }]">
         <li><router-link to="/work" @click="closeMobileMenu">WORK</router-link></li>
-        <li><router-link to="/expo-photo" @click="closeMobileMenu">EXPO PHOTO</router-link></li>
+        <li><router-link to="/galerie" @click="closeMobileMenu">EXPO PHOTO</router-link></li>
         <li><a href="https://www.etsy.com" target="_blank" @click="closeMobileMenu">SHOP</a></li>
         <li><router-link to="/about" @click="closeMobileMenu">À PROPOS DE MOI</router-link></li>
         <li><router-link to="/contact" @click="closeMobileMenu">CONTACT / DEVIS</router-link></li>

@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import AboutPage from './pages/AboutPage.vue'
 import ContactPage from './pages/ContactPage.vue'
-import ExpoPhotoPage from './pages/ExpoPhotoPage.vue'
 import GaleriePage from './pages/GaleriePage.vue'
 import HomePage from './pages/HomePage.vue'
 import JournalPhotoPage from './pages/JournalPhotoPage.vue'
@@ -26,8 +25,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/expo-photo',
-    component: ExpoPhotoPage,
-    name: 'expo-photo'
+    redirect: '/galerie'
   },
   {
     path: '/galerie',

@@ -20,7 +20,7 @@
         <h4>NAVIGATE</h4>
         <ul>
           <li><router-link to="/work">Work</router-link></li>
-          <li><router-link to="/expo-photo">Expo Photo</router-link></li>
+          <li><router-link to="/galerie">Expo Photo</router-link></li>
           <li><router-link to="/about">À Propos</router-link></li>
         </ul>
       </div>
