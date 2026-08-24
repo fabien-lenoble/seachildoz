@@ -2,7 +2,7 @@
   <div class="galerie-page">
     <!-- Hero Section -->
     <section class="seachildoz-hero">
-      <img 
+      <img
         class="hero-image"
         :src="heroImage"
         alt="SEACHILDOZ"
@@ -72,26 +72,26 @@
     <!-- Lightbox Modal -->
     <div v-if="lightboxOpen" class="lightbox-modal" @click="closeLightbox">
       <button class="lightbox-close" @click.stop="closeLightbox">✕</button>
-      
-      <button 
+
+      <button
         v-if="currentImageIndex > 0"
-        class="lightbox-arrow lightbox-arrow-left" 
+        class="lightbox-arrow lightbox-arrow-left"
         @click.stop="previousImage"
       >
         ←
       </button>
 
       <div class="lightbox-content" @click.stop>
-        <img 
-          :src="allImages[currentImageIndex]" 
-          :alt="`Photo ${currentImageIndex + 1}`" 
+        <img
+          :src="allImages[currentImageIndex]"
+          :alt="`Photo ${currentImageIndex + 1}`"
           class="lightbox-image"
         />
       </div>
 
-      <button 
+      <button
         v-if="currentImageIndex < allImages.length - 1"
-        class="lightbox-arrow lightbox-arrow-right" 
+        class="lightbox-arrow lightbox-arrow-right"
         @click.stop="nextImage"
       >
         →
@@ -105,9 +105,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { gallerySeries } from '../data/gallery.ts';
+import { computed, ref } from 'vue';
 import heroImg from '../assets/images/gallery/tumblr_e811c9d528d32ab442770103666dc504_178dd21b_1280.jpg';
+import { gallerySeries } from '../data/gallery.ts';
 
 const expandedArticle = ref<number | null>(0)
 const heroImage = heroImg
