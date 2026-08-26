@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import { customOffers, packages, services } from '../data/portfolio.ts'
+import { customOffers, packages, services } from '../data/portfolio.ts';
 </script>
 
 <style scoped>

@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { journalItems } from '../data/portfolio.ts'
+import { journalItems } from '../data/portfolio.ts';
 </script>
 
 <style scoped>

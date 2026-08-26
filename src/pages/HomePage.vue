@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts'
+import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
 </script>
 
 <style scoped>

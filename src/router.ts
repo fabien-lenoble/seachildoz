@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import AboutPage from './pages/AboutPage.vue'
 import ContactPage from './pages/ContactPage.vue'
-import GaleriePage from './pages/GaleriePage.vue'
 import HomePage from './pages/HomePage.vue'
 import JournalDetailPage from './pages/JournalDetailPage.vue'
 import JournalPhotoPage from './pages/JournalPhotoPage.vue'
