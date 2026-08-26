@@ -1,27 +1,27 @@
-import selfPortrait1 from '../assets/images/gallery/visage ficelle 2.jpeg'
 import selfPortrait2 from '../assets/images/gallery/mains JB1.jpeg'
 import selfPortrait3 from '../assets/images/gallery/mains corps.jpeg'
 import selfPortrait4 from '../assets/images/gallery/mains exp.jpeg'
 import selfPortrait5 from '../assets/images/gallery/pieds.jpeg'
+import selfPortrait1 from '../assets/images/gallery/visage ficelle 2.jpeg'
 
 import absence1 from '../assets/images/gallery/couple fantome 4.jpeg'
-import absence2 from '../assets/images/gallery/homme ombre.jpeg'
 import absence3 from '../assets/images/gallery/dos lit.jpeg'
+import absence2 from '../assets/images/gallery/homme ombre.jpeg'
 import absence4 from '../assets/images/gallery/livre.jpeg'
 
+import surreal5 from '../assets/images/gallery/ballons rouges 3.jpeg'
+import surreal4 from '../assets/images/gallery/ballons rouges.jpeg'
+import surreal3 from '../assets/images/gallery/ciel5.jpeg'
 import surreal1 from '../assets/images/gallery/mer kaway jaune.jpeg'
 import surreal2 from '../assets/images/gallery/pierre ballon.jpeg'
-import surreal3 from '../assets/images/gallery/ciel5.jpeg'
-import surreal4 from '../assets/images/gallery/ballons rouges.jpeg'
-import surreal5 from '../assets/images/gallery/ballons rouges 3.jpeg'
 
-import bodies1 from '../assets/images/gallery/melon2.jpeg'
-import bodies2 from '../assets/images/gallery/fleur qui tombe.jpeg'
 import bodies3 from '../assets/images/gallery/detail22.jpeg'
+import bodies2 from '../assets/images/gallery/fleur qui tombe.jpeg'
+import bodies1 from '../assets/images/gallery/melon2.jpeg'
 
-import cinematic1 from '../assets/images/gallery/storytelleing7.jpeg'
 import cinematic2 from '../assets/images/gallery/details 18.jpeg'
 import cinematic3 from '../assets/images/gallery/details.jpeg'
+import cinematic1 from '../assets/images/gallery/storytelleing7.jpeg'
 
 export interface GallerySeries {
   id: number

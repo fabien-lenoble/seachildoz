@@ -4,12 +4,10 @@
     <main>
       <router-view />
     </main>
-    <Footer />
   </div>
 </template>
 
 <script setup>
-import Footer from './components/Footer.vue';
 import Navigation from './components/Navigation.vue';
 </script>
 
@@ -19,10 +17,10 @@ import Navigation from './components/Navigation.vue';
 #app {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--color-black);
+  background-color: var(--color-cream);
 }
 
 main {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - var(--header-height));
 }
 </style>

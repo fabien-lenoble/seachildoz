@@ -1,30 +1,48 @@
 <template>
-  <nav class="navigation">
+  <nav class="navigation" :class="{ dark: isDarkRoute }">
+    <div class="page-indicator">{{ pageIndicator }}</div>
     <div class="nav-container">
-      <router-link to="/" class="nav-logo">
-        <span class="logo-text">MANON LE BIHAN</span>
+      <router-link to="/" class="nav-logo" @click="closeMobileMenu">
+        MANON<br />LE BIHAN
       </router-link>
 
-      <button @click="toggleMenu" class="nav-toggle">
+      <button class="nav-toggle" type="button" :aria-expanded="mobileMenuOpen" @click="toggleMenu">
         <span :class="{ active: mobileMenuOpen }"></span>
         <span :class="{ active: mobileMenuOpen }"></span>
       </button>
 
       <ul :class="['nav-links', { open: mobileMenuOpen }]">
         <li><router-link to="/work" @click="closeMobileMenu">WORK</router-link></li>
-        <li><router-link to="/galerie" @click="closeMobileMenu">EXPO PHOTO</router-link></li>
-        <li><a href="https://www.etsy.com" target="_blank" @click="closeMobileMenu">SHOP</a></li>
-        <li><router-link to="/about" @click="closeMobileMenu">À PROPOS DE MOI</router-link></li>
-        <li><router-link to="/contact" @click="closeMobileMenu">CONTACT / DEVIS</router-link></li>
+        <li><router-link to="/about" @click="closeMobileMenu">ABOUT</router-link></li>
+        <li><router-link to="/prestations" @click="closeMobileMenu">PRESTATIONS</router-link></li>
+        <li><router-link to="/journal-photo" @click="closeMobileMenu">JOURNAL</router-link></li>
+        <li><router-link to="/contact" @click="closeMobileMenu">CONTACT</router-link></li>
       </ul>
     </div>
   </nav>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const mobileMenuOpen = ref(false)
+
+const isDarkRoute = computed(() => {
+  return route.path.includes('/work/') || route.path === '/work/personnel' || route.path.startsWith('/journal-photo/')
+})
+
+const pageIndicator = computed(() => {
+  if (route.path === '/work') return '02 - WORK (ACCUEIL)'
+  if (route.path === '/work/client') return '03 - WORK (CLIENT)'
+  if (route.path === '/work/personnel') return '05 - WORK (PERSONNEL)'
+  if (route.path.startsWith('/work/')) return '04 - WORK (CLIENT)'
+  if (route.path === '/prestations' || route.path === '/services') return '01 - PRESTATIONS'
+  if (route.path.startsWith('/journal-photo')) return '01 - JOURNAL'
+  return '01 - ACCUEIL'
+})
 
 const toggleMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -37,65 +55,64 @@ const closeMobileMenu = () => {
 
 <style scoped>
 .navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: var(--color-cream);
+  color: var(--color-black);
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-beige);
+  padding: 0 var(--page-pad);
+}
+
+.page-indicator {
+  border-bottom: 1px solid currentColor;
+  font-size: 22px;
+  line-height: 1;
+  padding: 23px 0 14px;
+  text-transform: uppercase;
+}
+
+.navigation.dark {
+  background-color: var(--color-black);
+  color: var(--color-off-white);
 }
 
 .nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+  border-top: 0;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  height: 70px;
+  height: 92px;
+  margin: 0 auto;
+  padding-top: 18px;
 }
 
 .nav-logo {
   font-family: var(--font-anton);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-size: clamp(30px, 3.5vw, 40px);
+  letter-spacing: 0;
+  line-height: 0.98;
   text-transform: uppercase;
-  color: var(--color-off-white);
-  transition: opacity 0.3s ease;
-}
-
-.nav-logo:hover {
-  opacity: 0.7;
-}
-
-.logo-text {
-  display: block;
-  white-space: nowrap;
 }
 
 .nav-links {
-  display: flex;
-  gap: 3rem;
-  list-style: none;
   align-items: center;
+  display: flex;
+  gap: clamp(22px, 3.1vw, 40px);
+  list-style: none;
+  padding-top: 18px;
 }
 
 .nav-links a {
   font-family: var(--font-poppins);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--color-off-white);
-  position: relative;
-  transition: opacity 0.3s ease;
+  color: currentColor;
+  opacity: 0.48;
 }
 
-.nav-links a:hover {
-  opacity: 0.6;
+.nav-links a:hover,
+.nav-links a.router-link-active {
+  opacity: 1;
 }
 
 .nav-toggle {
@@ -111,7 +128,7 @@ const closeMobileMenu = () => {
 .nav-toggle span {
   width: 24px;
   height: 2px;
-  background-color: var(--color-off-white);
+  background-color: currentColor;
   transition: all 0.3s ease;
   display: block;
 }
@@ -124,13 +141,25 @@ const closeMobileMenu = () => {
   transform: rotate(-45deg) translate(-10px, -10px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+  .navigation {
+    padding: 0 20px;
+  }
+
+  .page-indicator {
+    font-size: 18px;
+    padding: 18px 0 12px;
+  }
+
   .nav-container {
-    height: 60px;
+    align-items: flex-start;
+    height: 82px;
+    padding-top: 16px;
   }
 
   .nav-logo {
-    font-size: 12px;
+    font-size: 30px;
+    line-height: 0.98;
   }
 
   .nav-toggle {
@@ -139,13 +168,14 @@ const closeMobileMenu = () => {
 
   .nav-links {
     position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
+    top: 124px;
+    left: 20px;
+    right: 20px;
     flex-direction: column;
-    gap: 0;
-    background-color: rgba(0, 0, 0, 0.98);
-    padding: 20px;
+    gap: 16px;
+    background-color: currentColor;
+    color: var(--color-cream);
+    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -153,17 +183,19 @@ const closeMobileMenu = () => {
   }
 
   .nav-links.open {
-    max-height: 400px;
+    max-height: 360px;
+    padding: 20px;
   }
 
   .nav-links li {
     width: 100%;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--color-beige);
+    padding: 8px 0;
   }
 
   .nav-links a {
-    font-size: 14px;
+    color: var(--color-cream);
+    font-size: 18px;
+    opacity: 1;
   }
 }
 </style>
