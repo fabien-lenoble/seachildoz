@@ -12,6 +12,9 @@
       <div class="hero-visual">
         <img :src="homePortrait" alt="Portrait creatif" />
       </div>
+      <p class="intro2 text-small">
+          Directrice artistique basee a Paris, je cree des images, des identites et des recits visuels pour des marques, des artistes et des projets qui cherchent une presence claire.
+        </p>
     </section>
 
     <section class="universe-strip">
@@ -79,6 +82,10 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
   align-self: end;
   margin-top: clamp(76px, 10vh, 118px);
   max-width: 255px;
+}
+
+.intro2 {
+  display: none;
 }
 
 .hero-visual {
@@ -246,11 +253,20 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
   }
 
   .intro {
-    margin-top: 34px;
+    display: none;
+  }
+
+  .intro2 {
+    animation: homeReveal 0.7s ease 0.16s both;
+    align-self: end;
+    margin-bottom: clamp(76px, 10vh, 118px);
+    max-width: 255px;
+    display: flex;
   }
 
   .hero-visual {
     min-height: 360px;
+    justify-content: start;
   }
 
   .hero-visual img {
