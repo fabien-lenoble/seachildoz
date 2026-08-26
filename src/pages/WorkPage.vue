@@ -130,7 +130,7 @@ watch(selectedUniverse, () => {
 
 .work-landing {
   display: grid;
-  margin: 28px calc(var(--page-pad) * -1) 0;
+  margin: 0px calc(var(--page-pad) * -1) 0;
 }
 
 .work-band {
@@ -185,7 +185,7 @@ watch(selectedUniverse, () => {
   display: flex;
   flex-wrap: wrap;
   gap: clamp(18px, 4vw, 54px);
-  margin: 7px 0 17px;
+  margin: 17px 0;
 }
 
 .filters button {
@@ -259,7 +259,6 @@ watch(selectedUniverse, () => {
 
 .personal-hero {
   display: grid;
-  margin: 28px calc(var(--page-pad) * -1) 0;
   min-height: 550px;
   overflow: hidden;
   padding: 0 var(--page-pad);

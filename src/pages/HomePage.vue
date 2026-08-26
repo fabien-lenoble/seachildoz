@@ -84,7 +84,7 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
 .hero-visual {
   align-self: end;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   min-height: 610px;
   overflow: hidden;
 }
@@ -92,7 +92,7 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
 .hero-visual img {
   animation: imageReveal 0.9s ease 0.12s both;
   align-self: end;
-  height: min(64vh, 660px);
+  height: min(100vh, 800px);
   max-width: 100%;
   object-fit: contain;
   object-position: bottom right;
@@ -159,7 +159,6 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  transition: opacity 0.18s ease;
   width: 100%;
 }
 
@@ -170,7 +169,6 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  transition: opacity 0.18s ease;
 }
 
 .universe-card:hover .universe-bg,
@@ -257,7 +255,6 @@ import { clientHero, homePortrait, personalHero } from '../data/portfolio.ts';
 
   .hero-visual img {
     height: 420px;
-    width: 100%;
   }
 
   .universe-strip {

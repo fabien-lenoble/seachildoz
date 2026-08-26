@@ -69,7 +69,7 @@ const fillerText = 'Le rythme graphique alterne aplats, respirations et images f
 .detail-layout {
   display: grid;
   gap: 42px;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 490px 1fr;
 }
 
 .project-aside {
@@ -119,7 +119,6 @@ dd {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 310px 390px;
-  margin-top: 30px;
 }
 
 .block {

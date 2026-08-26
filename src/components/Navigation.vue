@@ -35,13 +35,13 @@ const isDarkRoute = computed(() => {
 })
 
 const pageIndicator = computed(() => {
-  if (route.path === '/work') return '02 - WORK (ACCUEIL)'
-  if (route.path === '/work/client') return '03 - WORK (CLIENT)'
-  if (route.path === '/work/personnel') return '05 - WORK (PERSONNEL)'
-  if (route.path.startsWith('/work/')) return '04 - WORK (CLIENT)'
-  if (route.path === '/prestations' || route.path === '/services') return '01 - PRESTATIONS'
-  if (route.path.startsWith('/journal-photo')) return '01 - JOURNAL'
-  return '01 - ACCUEIL'
+  if (route.path === '/work') return 'WORK (ACCUEIL)'
+  if (route.path === '/work/client') return 'WORK (CLIENT)'
+  if (route.path === '/work/personnel') return 'WORK (PERSONNEL)'
+  if (route.path.startsWith('/work/')) return 'WORK (CLIENT)'
+  if (route.path === '/prestations' || route.path === '/services') return 'PRESTATIONS'
+  if (route.path.startsWith('/journal-photo')) return 'JOURNAL'
+  return 'ACCUEIL'
 })
 
 const toggleMenu = () => {
@@ -79,9 +79,8 @@ const closeMobileMenu = () => {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 92px;
   margin: 0 auto;
-  padding-top: 18px;
+  padding: 18px 0px;
 }
 
 .nav-logo {
@@ -153,7 +152,6 @@ const closeMobileMenu = () => {
 
   .nav-container {
     align-items: flex-start;
-    height: 82px;
     padding-top: 16px;
   }
 

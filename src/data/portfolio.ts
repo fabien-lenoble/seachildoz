@@ -1,4 +1,4 @@
-import portraitImage from '../assets/images/gallery/cheveux aux vents.jpeg'
+import portraitImage from '../assets/images/collage_accueil.png'
 import clientHeroImage from '../assets/images/gallery/d‚tails.png'
 import absenceImage from '../assets/images/gallery/homme ombre.jpeg'
 import projectImage from '../assets/images/gallery/mains JB1.jpeg'
