@@ -63,7 +63,7 @@ const closeMobileMenu = () => {
 
 .page-indicator {
   border-bottom: 1px solid currentColor;
-  font-size: 22px;
+  font-size: 11px;
   line-height: 1;
   padding: 23px 0 14px;
   text-transform: uppercase;
@@ -84,8 +84,9 @@ const closeMobileMenu = () => {
 }
 
 .nav-logo {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(30px, 3.5vw, 40px);
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 0.98;
   text-transform: uppercase;

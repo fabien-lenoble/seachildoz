@@ -72,7 +72,7 @@
 }
 
 .cta-title {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(24px, 5vw, 48px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -119,7 +119,7 @@
 }
 
 .footer-section h3 {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 18px;
   letter-spacing: 0.1em;
   text-transform: uppercase;

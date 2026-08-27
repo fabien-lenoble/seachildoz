@@ -273,7 +273,7 @@ const formations = [
 }
 
 .path-block h3 {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(30px, 4vw, 48px);
   line-height: 1;
   margin-bottom: 32px;

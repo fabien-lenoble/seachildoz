@@ -169,6 +169,7 @@ watch(selectedUniverse, () => {
   font-size: clamp(46px, 7vw, 80px);
   line-height: 0.92;
   text-transform: uppercase;
+  letter-spacing: 1.7px;
 }
 
 .work-band p {
@@ -238,7 +239,7 @@ watch(selectedUniverse, () => {
 
 .project-tile span {
   bottom: 22px;
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(18px, 2vw, 27px);
   left: 22px;
   line-height: 0.98;

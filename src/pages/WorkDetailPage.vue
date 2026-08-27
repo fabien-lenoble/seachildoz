@@ -103,7 +103,7 @@ dl {
 }
 
 dt {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 15px;
   line-height: 1;
   text-transform: uppercase;

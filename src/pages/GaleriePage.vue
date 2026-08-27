@@ -190,7 +190,7 @@ const previousImage = () => {
 }
 
 .hero-title {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(48px, 6vw, 80px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -231,7 +231,7 @@ const previousImage = () => {
 
 /* Section Titles */
 .section-title {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 36px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -272,7 +272,7 @@ const previousImage = () => {
 }
 
 .article-title {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -302,7 +302,7 @@ const previousImage = () => {
   position: absolute;
   top: 0;
   right: 0;
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 24px;
   color: var(--color-beige);
   transition: transform 0.3s ease;

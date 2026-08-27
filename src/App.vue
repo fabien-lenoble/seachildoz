@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ dark: isDark }">
     <Navigation />
     <main>
       <router-view />
@@ -8,19 +8,32 @@
 </template>
 
 <script setup>
-import Navigation from './components/Navigation.vue';
+import { computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import Navigation from './components/Navigation.vue'
+
+const route = useRoute()
+const isDark = computed(() => route.meta.theme === 'dark')
+
+watch(
+  isDark,
+  (dark) => {
+    document.body.classList.toggle('is-dark', dark)
+  },
+  { immediate: true }
+)
 </script>
 
 <style>
 @import './styles/globals.css';
 
 #app {
-  width: 100%;
   min-height: 100vh;
-  background-color: var(--color-cream);
+  background: var(--color-cream);
 }
 
-main {
-  min-height: calc(100vh - var(--header-height));
+#app.dark {
+  background: var(--color-black);
+  color: #fff;
 }
 </style>

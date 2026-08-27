@@ -139,7 +139,7 @@ import { customOffers, packages, services } from '../data/portfolio.ts';
 }
 
 .packages-heading h2 {
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(34px, 4.5vw, 56px);
   line-height: 0.98;
   text-transform: uppercase;
@@ -279,7 +279,7 @@ import { customOffers, packages, services } from '../data/portfolio.ts';
 
 .stats-band strong {
   display: block;
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: clamp(42px, 4vw, 62px);
   letter-spacing: 0.09em;
   line-height: 1;
@@ -308,7 +308,7 @@ import { customOffers, packages, services } from '../data/portfolio.ts';
 
 .project-cta strong {
   display: block;
-  font-family: var(--font-anton);
+  font-family: var(--font-barlow);
   font-size: 24px;
   text-transform: uppercase;
 }
