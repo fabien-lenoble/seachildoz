@@ -19,10 +19,18 @@
       <h2>Insomnie a tendance artistique alors souvent, je cree des choses.</h2>
       <div class="body-grid first">
         <p>{{ longText }}</p>
-        <div class="color-block rose"></div>
+        <img
+            class="about-img-1"
+            :src="clientHeroImage"
+            alt="SEACHILDOZ"
+        />
       </div>
       <div class="body-grid second">
-        <div class="color-block wide"></div>
+        <img
+            class="about-img-2"
+            :src="clientHeroImage2"
+            alt="SEACHILDOZ"
+        />
         <p>{{ secondText }}</p>
       </div>
     </section>
@@ -65,6 +73,8 @@
 </template>
 
 <script setup lang="ts">
+import clientHeroImage from '../assets/images/gallery/autoportrait 9.jpeg'
+import clientHeroImage2 from '../assets/images/gallery/cheveux aux vents2.jpeg'
 import { homePortrait } from '../data/portfolio.ts'
 
 const longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
@@ -206,6 +216,16 @@ const formations = [
 
 .about-body {
   padding: 0 6px;
+}
+
+.about-img-1 {
+  width: 150%;
+  max-width: 800px;
+}
+
+.about-img-2 {
+  width: 120%;
+  max-width: 530px;
 }
 
 .path-section {

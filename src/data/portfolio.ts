@@ -1,10 +1,10 @@
 import portraitImage from '../assets/images/collage_accueil.png'
+import journalImage from '../assets/images/gallery/291E3BD9-E14C-4EE0-9B2F-71262CD049D8.JPG'
 import clientHeroImage from '../assets/images/gallery/d‚tails.png'
 import absenceImage from '../assets/images/gallery/homme ombre.jpeg'
 import projectImage from '../assets/images/gallery/mains JB1.jpeg'
 import detailImage from '../assets/images/gallery/mains lumiere 6.jpeg'
 import sunsetImage from '../assets/images/gallery/mer kaway jaune.jpeg'
-import journalImage from '../assets/images/gallery/storytelling1.jpeg'
 import personalHeroImage from '../assets/images/gallery/tumblr_e811c9d528d32ab442770103666dc504_178dd21b_1280.jpg'
 
 export type WorkUniverse = 'client' | 'personnel'
@@ -209,7 +209,8 @@ export const journalItems = [
       `J'avais une quinzaine d'années, lorsque je me suis mise à dessiner. Dessiner, c'était découvrir le pouvoir de l'infini. De l'imagination, sans limite. Dessiner, c'était aller au-delà du réel, au-delà du temps. D'un seul coup de crayon, tout existait. Tout était possible. Les seules limites devenaient celles de notre imaginaire. Le dessin offrait la possibilité de créer des émotions qui n'existaient pas, ou qu'on ne pouvait photographier. Jonglant entre objectifs et pinceaux, j'ai appris à raconter des histoires, pourvu que cela me procure des émotions. Ou que cela vous en procure.`,
       `J'avais une vingtaine d'années lorsque j'ai voulu donner vie à mes images. Donner vie à mes photos et à mes croquis. J'ai découvert le pouvoir qu'avait une image en mouvement, un dessin animé, une musique à partager, une voix à enregistrer. J'ai découvert le pouvoir de vous faire vivre des choses, j'apprends à pouvoir m'émerveiller de la beauté du mouvement. J'ai longtemps pensé qu'il n'y avait rien de plus beau que l'éternité d'un souvenir figé à travers une photo, ou qu'une émotion ancrée sur un carnet de dessins. Mais le mouvement, ne serait-ce pas finalement ce qui nous représente tous, vivant. Et quoi de plus beau comme émotion, que celle-ci.`,
       `Le mouvement des va-et-vient, des allers-retours, l'écho des rires, le mouvement des pas de danse qui s'allument, des regards qui se transpercent, des lumières qui s'embrasent, et des mains qui s'agitent. Je vois le champ des possibilités, et je trouve cela fascinant.`,
-      `J'avais une dizaine d'années, lorsque j'ai eu entre les mains un appareil photo pour la première fois. Presque vingt ans plus tard, je suis toujours fascinée par les images. Par la beauté, par celle que je cherche, celle que je trouve, celle que je crée. Celle qui existe toujours, si on apprend à la voir. Je suis toujours amoureuse des sentiments que procure l'art, et c'est pour cette raison que je continuerai à faire vivre ces émotions qui brûlent en moi, et que je veux faire brûler en vous... pour toujours.`
+      `J'avais une dizaine d'années, lorsque j'ai eu entre les mains un appareil photo pour la première fois. Vingt ans plus tard, je suis toujours fascinée par les images. Par la beauté, par celle que je cherche, celle que je trouve, celle que je crée. Celle qui existe toujours, si on apprend à la voir.`,
+      `Je suis toujours amoureuse des sentiments que procure l'art, et c'est pour cette raison que je continuerai à faire vivre ces émotions qui brûlent en moi, et que je veux faire brûler en vous... pour toujours.`
     ]
   },
   {
