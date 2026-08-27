@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/seachildoz/',
+  base: '/',
   build: {
     outDir: 'dist'
   }
