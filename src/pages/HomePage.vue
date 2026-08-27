@@ -89,7 +89,6 @@
           <li>PHOTOGRAPHY</li>
           <li>VIDEO</li>
           <li>ILLUSTRATION</li>
-          <li>CONCEPT</li>
         </ul>
       </div>
     </section>
@@ -103,7 +102,7 @@
           class="portfolio-item"
         >
           <img :src="item.image" :alt="item.label" />
-          <span class="script-label" :style="{ transform: `rotate(${item.rotate}deg)` }">{{ item.label }}</span>
+          <span class="script-label">{{ item.label }}</span>
         </router-link>
       </div>
       <router-link to="/work" class="voir-plus">VOIR PLUS</router-link>
@@ -115,38 +114,32 @@
 const highlights = [
   {
     label: 'PHOTO',
-    rotate: -8,
     to: '/work/1',
     image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80'
   },
   {
     label: 'BRANDING',
-    rotate: 6,
     to: '/work/2',
     image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=80'
   },
   {
     label: 'ART DIRECTION',
-    rotate: -4,
     to: '/work/3',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80'
   },
   {
     label: 'ILLUSTRATION',
-    rotate: 8,
     to: '/work/4',
     image: 'https://images.unsplash.com/photo-1490750967868-88aa4c76f0f4?auto=format&fit=crop&w=900&q=80'
   },
   {
     label: 'VIDEO',
-    rotate: -6,
     to: '/work/5',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80'
   },
   {
-    label: 'CONCEPT',
-    rotate: 5,
-    to: '/work/6',
+    label: 'STORIES',
+    to: '/journal-photo',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80'
   }
 ]
@@ -163,7 +156,6 @@ const highlights = [
   grid-template-columns: 1.05fr 0.95fr;
   gap: 24px;
   align-items: center;
-  /* max-width: 1440px; */
   margin: 0 auto;
   padding: 28px 140px 48px;
   min-height: 72vh;
@@ -176,6 +168,7 @@ const highlights = [
   letter-spacing: 0.01em;
   line-height: 1.08;
   text-transform: uppercase;
+  padding-bottom: 32px;
 }
 
 .hero-subtitle {
@@ -358,6 +351,7 @@ const highlights = [
 .services-col {
   position: relative;
   padding-top: 18px;
+  font-family: var(--font-caveat);
 }
 
 .hand-arrow {
@@ -408,7 +402,7 @@ const highlights = [
   position: absolute;
   left: 14px;
   bottom: 10px;
-  font-family: var(--font-script);
+  font-family: var(--font-caveat);
   color: var(--color-yellow-bright);
   font-size: 30px;
   font-weight: 700;

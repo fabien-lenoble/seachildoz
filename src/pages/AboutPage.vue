@@ -59,6 +59,8 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 <style scoped>
 .about-page {
   min-height: 1900px;
+  max-width: 1440px;
+  justify-self: center;
 }
 
 .about-intro {
@@ -110,7 +112,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 
 .crop {
   width: 500px;
-  height: 380px;
+  height: 420px;
   overflow: hidden;
 }
 
@@ -127,7 +129,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 }
 
 .about-section-1-text-1 div {
-  font-size: 13px;
+  font-size: 16px;
   max-width: 210px;
   display: flex;
   flex-direction: column;
@@ -271,7 +273,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 }
 
 .about-body h2 {
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(24px, 3vw, 48px);
   line-height: 1;
   margin: 0 0 60px;
   text-transform: uppercase;
@@ -302,12 +304,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 }
 
 .body-grid p {
-  font-size: 13px;
-  max-width: 310px;
-}
-
-.body-grid.second p {
-  max-width: 300px;
+  font-size: 16px;
 }
 
 .color-block {
