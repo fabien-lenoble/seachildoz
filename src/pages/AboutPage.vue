@@ -1,20 +1,18 @@
 <template>
   <div class="page-shell about-page">
-    <section class="about-intro">
-      <h1>Je cree des<br />images et des<br />univers qui<br />ont du sens</h1>
-    </section>
-
     <section class="about-section-1">
+      <h1>Je crée des<br />images et des<br />univers qui<br />ont du sens</h1>
+
       <div class="crop">
         <img class="about-section-1-image" :src="clientHeroImage" alt="Portrait Manon" />
       </div>
       <div class="about-section-1-text-1">
         <div>
           <p>
-            Je m'appelle Manon, on m'appelle aussi Zoë. J'aurais du m'appeler Nikita, mais le prenom etait deja pris par le chat. Alors plutot que de renommer le chat, on a decide de m'appeler Manon.
+            Je m'appelle Manon, on m'appelle aussi Zoë. J'aurais dû m'appeler Nikita, mais le prénom était déjà pris par le chat. Alors plutôt que de renommer le chat, on a décidé de m'appeler Manon.
           </p>
           <p>
-            Je ne ressemble ni a une espionne du KGB, ni a une heroine de film et encore moins a un president russe, et finalement Manon, ca coulait de source.
+            Je ne ressemble ni à une espionne du KGB, ni à une héroïne de film et encore moins à un président russe, et finalement Manon, ça coulait de source.
           </p>
         </div>
         <router-link class="journal-photo-link" to="/journal-photo">accéder au journal</router-link>
@@ -24,17 +22,18 @@
     <section class="about-body">
       <h2>Insomnie à tendance artistique alors souvent, je crée des choses.</h2>
       <div class="body-grid first">
-        <div>
-          <p class="bold">J'AIME QUAND UNE IMAGE SEMBLE ÉVIDENTE, MAIS QU'ON NE SAIT PAS EXACTEMENT POURQUOI.</p>
-          <p v-for="part in longText.split('\n')" :key="part">{{ part }}</p>
-        </div>
         <img
           class="about-img-1"
           :src="clientHeroImage"
           alt="SEACHILDOZ"
         />
+        <div>
+          <p v-for="part in longText.split('\n')" :key="part">{{ part }}</p>
+        </div>
+        <h1>J'AIME QUAND UNE IMAGE SEMBLE ÉVIDENTE, MAIS QU'ON NE SAIT PAS EXACTEMENT POURQUOI.</h1>
       </div>
       <div class="body-grid second">
+        <h1>Créer, c'est donner une forme à ce qui n'en n'avait pas encore</h1>
         <img
             class="about-img-2"
             :src="clientHeroImage2"
@@ -42,7 +41,6 @@
         />
         <p>{{ secondText }}</p>
       </div>
-      <h2>Créer, c'est donner une forme à ce qui n'en n'avait pas encore</h2>
     </section>
   </div>
 </template>
@@ -63,12 +61,8 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
   justify-self: center;
 }
 
-.about-intro {
-  padding: 48px 20px 0;
-}
-
-.about-intro h1 {
-  font-family: var(--font-poppins);
+h1 {
+  font-family: var(--font-barlow);
   font-size: clamp(38px, 4.8vw, 60px);
   font-weight: 800;
   line-height: 1.14;
@@ -76,37 +70,11 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
   text-transform: uppercase;
 }
 
-.about-intro img {
-  aspect-ratio: 1.24 / 1;
-  object-fit: cover;
-  width: min(100%, 530px);
-}
-
-.about-intro aside {
-  align-content: start;
-  display: grid;
-  font-size: 13px;
-  line-height: 1.05;
-  padding-top: 10px;
-}
-
-.about-intro aside p {
-  max-width: 270px;
-}
-
-.about-intro a {
-  border-bottom: 1px solid var(--color-line);
-  justify-self: start;
-  margin-top: 168px;
-  padding: 0 80px 14px 0;
-  text-transform: uppercase;
-}
-
 .about-section-1 {
   display: flex;
-  gap: 24px;
+  gap: 64px;
   justify-content: start;
-  margin-bottom: 52px;
+  margin: 52px 0 100px 0;
   padding: 0 6px;
 }
 
@@ -130,7 +98,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 
 .about-section-1-text-1 div {
   font-size: 16px;
-  max-width: 210px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -148,6 +116,10 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 
 .about-body {
   padding: 0 6px;
+}
+
+.about-body h1 {
+  font-size: clamp(38px, 4.8vw, 50px);
 }
 
 .about-img-1 {
@@ -275,7 +247,7 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 .about-body h2 {
   font-size: clamp(24px, 3vw, 48px);
   line-height: 1;
-  margin: 0 0 60px;
+  margin: 0 0 100px;
   text-transform: uppercase;
 }
 
@@ -287,9 +259,9 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 .body-grid {
   display: flex;
   align-items: start;
-  gap: 34px;
+  gap: 64px;
   justify-content: start;
-  margin-bottom: 52px;
+  margin-bottom: 100px;
 }
 
 .body-grid.first div {
@@ -301,6 +273,10 @@ const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime 
 .body-grid.second {
   display: flex;
   justify-content: end;
+}
+
+.body-grid.second h1 {
+  min-width: 300px;
 }
 
 .body-grid p {
