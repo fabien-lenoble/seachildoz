@@ -43,6 +43,12 @@
 
     <section class="univers">
       <router-link to="/work/client" class="univers-card">
+        <img
+          class="univers-photo"
+          src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
+          alt=""
+          aria-hidden="true"
+        />
         <div>
           <h2>UNIVERS CLIENT</h2>
           <p>Campagnes, direction artistique, identités, création visuelle, vidéos.</p>
@@ -50,6 +56,12 @@
         <span class="univers-arrow" aria-hidden="true">→</span>
       </router-link>
       <router-link to="/work/personnel" class="univers-card">
+        <img
+          class="univers-photo"
+          src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=80"
+          alt=""
+          aria-hidden="true"
+        />
         <div>
           <h2>UNIVERS PERSONNEL</h2>
           <p>Photographies personnelles, portraits, editorial, fine art, expositions.</p>
@@ -173,7 +185,7 @@ const highlights = [
 
 .hero-subtitle {
   margin-top: 22px;
-  font-size: 15px;
+  font-size: 16px;
   max-width: 420px;
 }
 
@@ -276,16 +288,39 @@ const highlights = [
 }
 
 .univers-card {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
   padding: 48px 40px;
   color: #fff;
+  overflow: hidden;
 }
 
 .univers-card:first-child {
   border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.univers-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.univers-card:hover .univers-photo {
+  opacity: 0.45;
+}
+
+.univers-card > div,
+.univers-arrow {
+  position: relative;
+  z-index: 1;
 }
 
 .univers-card h2 {

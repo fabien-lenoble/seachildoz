@@ -132,67 +132,34 @@ export const projects: PortfolioProject[] = [
 export const services = [
   {
     title: 'Direction artistique',
-    text: 'Concepts creatifs, univers visuels, campagnes, scenographie'
+    text: 'Concepts creatifs, univers visuels, campagnes, scenographie',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="19" stroke="currentColor" stroke-width="2.4"/><path d="M24 5 L27 21 L24 24 L21 21 Z" fill="currentColor"/></svg>'
   },
   {
     title: 'Branding & identite',
-    text: 'Identite visuelle, logotype, territoire de marque'
+    text: 'Identite visuelle, logotype, territoire de marque',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4 L42 14 V34 L24 44 L6 34 V14 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 14 L33 19 V29 L24 34 L15 29 V19 Z" stroke="currentColor" stroke-width="2"/></svg>'
   },
   {
     title: 'Image & photographie',
-    text: 'Direction photo, shooting, retouche, editorial'
+    text: 'Direction photo, shooting, retouche, editorial',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="13" width="38" height="27" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M17 13 L20 7 H28 L31 13" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="24" cy="27" r="8" stroke="currentColor" stroke-width="2.4"/></svg>'
   },
   {
     title: 'Design & illustration',
-    text: 'Maquette, mise en page, illustrations'
+    text: 'Maquette, mise en page, illustrations',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 42 L9 31 L32 8 L40 16 L17 39 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M27 13 L35 21" stroke="currentColor" stroke-width="2.4"/></svg>'
   },
   {
     title: 'Edition & print',
-    text: 'Supports imprimes, books, affiches, flyers'
+    text: 'Supports imprimes, books, affiches, flyers',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6 H33 L39 12 V42 H9 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M33 6 V12 H39" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M15 22 H31 M15 29 H31 M15 36 H24" stroke="currentColor" stroke-width="2"/></svg>'
   },
   {
     title: 'Video & motion design',
-    text: 'Direction de contenu, montage, motion design'
+    text: 'Direction de contenu, montage, motion design',
+    icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="11" width="28" height="26" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M33 20 L43 14 V34 L33 28 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>'
   }
-]
-
-export const packages = [
-  {
-    title: 'Social media',
-    eyebrow: 'Presence digitale',
-    price: 'A partir de 650 EUR',
-    text: 'Pour donner une vraie coherence visuelle a Instagram, LinkedIn ou une campagne courte : direction, templates, contenus et rythme clair.',
-    items: ['Mini audit image', 'Direction visuelle', '12 templates reseaux', '1 kit contenu']
-  },
-  {
-    title: 'Identite',
-    eyebrow: 'Lancement ou refonte',
-    price: 'A partir de 1 200 EUR',
-    text: 'Pour poser les bases d un univers de marque : logo, couleurs, typographies, references visuelles et premieres applications coherentes.',
-    items: ['Logo ou refonte', 'Palette & typos', 'Mini charte', '3 supports clefs']
-  },
-  {
-    title: 'Creation',
-    eyebrow: 'Campagne creative',
-    price: 'A partir de 1 800 EUR',
-    text: 'Pour une sortie, un lancement, une collection ou un temps fort : concept, moodboard, direction artistique, images et declinaisons.',
-    items: ['Concept & moodboard', 'Direction artistique', 'Shooting ou visuels', 'Assets print/digital']
-  },
-  {
-    title: 'Entreprise',
-    eyebrow: 'Accompagnement marque',
-    price: 'A partir de 2 500 EUR',
-    text: 'Pour structurer une image de marque sur plusieurs supports : campagne, documents, contenus, presentation, communication interne ou externe.',
-    items: ['Audit & strategie', 'Territoire visuel', 'Supports de marque', 'Suivi creation']
-  }
-]
-
-export const customOffers = [
-  'Shooting portrait, produit, equipe ou editorial',
-  'Evenement ponctuel, lancement, pop-up, exposition',
-  'Direction artistique de campagne ou de tournage',
-  'Edition, affiche, dossier presse, book ou support imprime',
-  'Retouche, selection image, declinaisons social media'
 ]
 
 export const journalItems = [
@@ -240,9 +207,36 @@ export const journalItems = [
     ]
   },
   {
+    slug: 'seachildoz-c-est-quoi',
+    title: 'Seachildoz : C’est quoi ?',
+    category: 'Seachildoz',
+    image: personalHeroImage,
+    images: [personalHeroImage, absenceImage, sunsetImage],
+    excerpt: 'Avant d’etre un nom, Seachildoz etait une facon de regarder.',
+    text: [
+      `Avant d'être un nom, Seachildoz était une façon de regarder.`,
+      `J'ai commencé à photographier très jeune.\nÀ quinze ans, je partageais déjà mes images sur les réseaux. Avant même cela, il y avait les Skyblogs, les premières images mises en ligne, les premiers fragments de vie déposés quelque part sur internet.`,
+      `Très tôt, j'ai compris que j'avais besoin d'un espace à moi.\nUn endroit où je pourrais laisser parler une autre facette de ce que je suis, sans avoir à lui donner les mêmes règles, les mêmes codes, ni la même voix.`,
+      `Puis, autour de mes vingt ans, un ami m'a appelée **Zoé**.`,
+      `Un prénom sorti d'une chanson. Il m'a dit qu'il m'irait bien.\nPeut-être parce qu'il y avait quelque chose de juste dans ses sonorités. Peut-être aussi parce que, dans Zoé, il y avait **Oz** — et qu'Oz, forcément, avait quelque chose de magique.`,
+      `Le prénom est resté.`,
+      `Puis est venu **Seachildoz**.`,
+      `*Sea child.*\n*Oz.*`,
+      `Un enfant de la mer, quelque part entre le réel et l'imaginaire.\nUn nom devenu refuge, puis signature, puis univers.`,
+      `Seachildoz est né sur internet, mais il a grandi avec moi. J'y ai construit peu à peu un monde plus instinctif, plus sensible, plus libre. Un endroit où la photographie pouvait être moins une manière de montrer qu'une manière de ressentir.`,
+      `**Manon et Zoé ne sont pourtant pas deux personnes.**`,
+      `Elles cohabitent.`,
+      `Manon est celle qui construit, qui pense, qui organise, qui travaille avec le monde tel qu'il est.\nZoé est celle qui observe autrement. Celle qui cherche la poésie dans les détails, qui se perd volontiers dans l'intime, l'étrange, le rêve et le sensible.`,
+      `L'une n'existe pas sans l'autre.`,
+      `**Manon Le Bihan est mon nom.\nSeachildoz est mon monde.**`,
+      `Deux façons de regarder, deux voix qui se répondent, deux espaces d'une même personne.`,
+      `Et quelque part entre les deux, il y a la photographie.`
+    ]
+  },
+  {
     slug: 'seachildoz-pourquoi-photographier',
-    title: 'Seachildoz : pourquoi photographier',
-    category: 'Photographie',
+    title: 'Seachildoz : Pourquoi photographier ?',
+    category: 'Seachildoz',
     image: personalHeroImage,
     images: [personalHeroImage, absenceImage, sunsetImage],
     excerpt: 'Ecrire, parler, photographier : une tentative de dire l intime sans toujours avoir les mots.',
@@ -256,8 +250,8 @@ export const journalItems = [
   },
   {
     slug: 'les-series-photographiques',
-    title: 'Les series photographiques',
-    category: 'Series intimes & personnelles',
+    title: 'Seachildoz : Les series',
+    category: 'Seachildoz',
     image: detailImage,
     images: [detailImage, personalHeroImage, absenceImage],
     excerpt: 'Un espace pour presenter les differentes series photographiques, leurs intentions, leurs themes et leurs liens avec l intime.',
@@ -269,7 +263,7 @@ export const journalItems = [
   },
   {
     slug: 'dix-faits-sur-moi',
-    title: 'Dix faits sur moi',
+    title: '10 faits sur moi',
     category: 'A savoir sur moi',
     image: portraitImage,
     images: [portraitImage, journalImage, clientHeroImage],
@@ -293,16 +287,14 @@ export const journalItems = [
     ]
   },
   {
-    slug: 'images-qui-restent',
-    title: 'Images qui restent',
-    category: 'Journal',
+    slug: 'cv-et-experiences-professionnelles',
+    title: 'CV & Exp professionnelles',
+    category: 'Parcours professionnel',
     image: absenceImage,
     images: [absenceImage, sunsetImage, projectImage],
-    excerpt: 'Pourquoi certaines images continuent de travailler longtemps apres le premier regard.',
+    excerpt: 'Formations, experiences et collaborations : un apercu du parcours professionnel.',
     text: [
-      'Une image qui reste n est pas forcement spectaculaire. Parfois elle tient a une posture, une couleur, un vide, une chose presque invisible qui accroche la memoire.',
-      'Je cherche souvent cet endroit entre narration et sensation. Le spectateur doit pouvoir entrer dans l image sans qu on lui explique tout.',
-      'Dans les projets clients comme dans les recherches personnelles, cette question revient toujours : qu est-ce qu on garde quand on a ferme la page ?'
+      'Textes a venir. Cet article presentera le CV complet ainsi que les principales experiences professionnelles : formations, postes occupes et collaborations menees.'
     ]
   }
 ]

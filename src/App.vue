@@ -4,12 +4,14 @@
     <main>
       <router-view />
     </main>
+    <Footer />
   </div>
 </template>
 
 <script setup>
 import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import Footer from './components/Footer.vue'
 import Navigation from './components/Navigation.vue'
 
 const route = useRoute()

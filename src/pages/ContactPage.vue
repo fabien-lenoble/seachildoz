@@ -31,28 +31,12 @@
         </div>
       </form>
     </section>
-
-    <footer class="contact-footer">
-      <div>
-        <h2>Manon Le Bihan</h2>
-        <p>Art Director &<br />Multidisciplinary creative</p>
-        <p>Paris, France</p>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <a href="mailto:manon@manon.fr">manon@manon.fr</a>
-        <a :href="whatsappUrl" target="_blank" rel="noreferrer">whatsapp</a>
-      </div>
-      <div class="socials" aria-label="Liens sociaux">
-        <a href="https://www.instagram.com" target="_blank" rel="noreferrer"></a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"></a>
-      </div>
-    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, reactive } from 'vue'
+import { site } from '../data/site.ts'
 
 const form = reactive({
   lastName: '',
@@ -63,13 +47,13 @@ const form = reactive({
 
 const whatsappUrl = computed(() => {
   const message = encodeURIComponent(`Bonjour Manon, je souhaite parler d'un projet. ${form.message}`)
-  return `https://wa.me/?text=${message}`
+  return `${site.whatsapp}?text=${message}`
 })
 
 const sendMail = () => {
   const subject = encodeURIComponent('Nouveau projet')
   const body = encodeURIComponent(`Nom: ${form.lastName}\nPrenom: ${form.firstName}\nEmail: ${form.email}\n\n${form.message}`)
-  window.location.href = `mailto:manon@manon.fr?subject=${subject}&body=${body}`
+  window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
 }
 </script>
 
@@ -153,62 +137,14 @@ textarea {
   text-transform: uppercase;
 }
 
-.contact-footer {
-  background: var(--color-black);
-  color: var(--color-off-white);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 0 calc(var(--page-pad) * -1);
-  min-height: 184px;
-  padding: 42px var(--page-pad);
-}
-
-.contact-footer h2 {
-  border-bottom: 1px solid var(--color-line);
-  display: inline-block;
-  font-family: var(--font-poppins);
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  padding-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.contact-footer p,
-.contact-footer a {
-  display: block;
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
-.socials {
-  align-items: center;
-  display: flex;
-  gap: 24px;
-  justify-content: end;
-}
-
-.socials a {
-  background: var(--color-cream);
-  border-radius: 50%;
-  height: 52px;
-  width: 52px;
-}
-
 @media (max-width: 640px) {
   .contact-layout,
-  .contact-footer,
   .inline-fields {
     grid-template-columns: 1fr;
   }
 
   .contact-layout {
     padding-top: 58px;
-  }
-
-  .socials {
-    justify-content: start;
   }
 }
 </style>

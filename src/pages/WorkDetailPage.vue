@@ -1,6 +1,6 @@
 <template>
   <div v-if="project" class="page-shell dark detail-page">
-    <router-link to="/work/client" class="back-link">← Back to work</router-link>
+    <router-link to="/work/client" class="back-link">← Retour aux projets</router-link>
 
     <section class="detail-layout">
       <aside class="project-aside">

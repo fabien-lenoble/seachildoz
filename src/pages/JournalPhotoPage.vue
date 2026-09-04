@@ -5,27 +5,72 @@
       <p>Notes d'atelier, fragments visuels, recherches et coulisses de creation.</p>
     </section>
 
-    <section class="journal-grid">
-      <router-link
-        v-for="(item, index) in journalItems"
-        :key="item.slug"
-        class="journal-card"
-        :class="`card-${index}`"
-        :to="`/journal-photo/${item.slug}`"
-      >
-        <img :src="item.image" :alt="item.title" />
-        <div>
-          <span>{{ item.category }}</span>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.excerpt }}</p>
-        </div>
-      </router-link>
+    <section class="journal-group">
+      <h2 class="group-label">À propos</h2>
+      <div class="journal-grid grid-two">
+        <router-link
+          v-for="item in groupAbout"
+          :key="item.slug"
+          class="journal-card"
+          :to="`/journal-photo/${item.slug}`"
+        >
+          <img :src="item.image" :alt="item.title" />
+          <div>
+            <span>{{ item.category }}</span>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+          </div>
+        </router-link>
+      </div>
+    </section>
+
+    <section class="journal-group">
+      <h2 class="group-label">Seachildoz</h2>
+      <div class="journal-grid grid-three">
+        <router-link
+          v-for="item in groupSeachildoz"
+          :key="item.slug"
+          class="journal-card"
+          :to="`/journal-photo/${item.slug}`"
+        >
+          <img :src="item.image" :alt="item.title" />
+          <div>
+            <span>{{ item.category }}</span>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+          </div>
+        </router-link>
+      </div>
+    </section>
+
+    <section class="journal-group">
+      <h2 class="group-label">En savoir plus</h2>
+      <div class="journal-grid grid-two">
+        <router-link
+          v-for="item in groupMore"
+          :key="item.slug"
+          class="journal-card"
+          :to="`/journal-photo/${item.slug}`"
+        >
+          <img :src="item.image" :alt="item.title" />
+          <div>
+            <span>{{ item.category }}</span>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+          </div>
+        </router-link>
+      </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { journalItems } from '../data/portfolio.ts';
+
+const groupAbout = computed(() => journalItems.slice(0, 2));
+const groupSeachildoz = computed(() => journalItems.slice(2, 5));
+const groupMore = computed(() => journalItems.slice(5, 7));
 </script>
 
 <style scoped>
@@ -44,10 +89,40 @@ import { journalItems } from '../data/portfolio.ts';
   max-width: 320px;
 }
 
+.journal-group {
+  padding-bottom: 44px;
+}
+
+.group-label {
+  font-family: var(--font-barlow);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--color-line);
+  padding-top: 14px;
+  margin-bottom: 16px;
+}
+
 .journal-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-two .journal-card {
+  min-height: 400px;
+}
+
+.grid-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-three .journal-card {
+  min-height: 340px;
 }
 
 .journal-card {
@@ -99,12 +174,6 @@ import { journalItems } from '../data/portfolio.ts';
   line-height: 1.25;
 }
 
-.card-0 { grid-column: span 3; min-height: 430px; }
-.card-1 { grid-column: span 3; min-height: 310px; }
-.card-2 { grid-column: span 2; min-height: 360px; }
-.card-3 { grid-column: span 2; min-height: 360px; }
-.card-4 { grid-column: span 2; min-height: 360px; }
-
 @media (max-width: 640px) {
   .journal-head {
     align-items: start;
@@ -112,17 +181,14 @@ import { journalItems } from '../data/portfolio.ts';
     gap: 20px;
   }
 
-  .journal-grid {
+  .grid-two,
+  .grid-three {
     grid-template-columns: 1fr;
   }
 
   .journal-card,
-  .card-0,
-  .card-1,
-  .card-2,
-  .card-3,
-  .card-4 {
-    grid-column: auto;
+  .grid-two .journal-card,
+  .grid-three .journal-card {
     min-height: 300px;
   }
 }

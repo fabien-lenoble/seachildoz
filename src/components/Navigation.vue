@@ -12,11 +12,11 @@
       </button>
 
       <ul :class="['nav-links', { open: mobileMenuOpen }]">
-        <li><router-link to="/work" @click="closeMobileMenu">WORK</router-link></li>
-        <li><router-link to="/about" @click="closeMobileMenu">ABOUT</router-link></li>
-        <li><router-link to="/prestations" @click="closeMobileMenu">PRESTATIONS</router-link></li>
+        <li><router-link to="/work" @click="closeMobileMenu">PROJETS</router-link></li>
+        <li><router-link to="/about" @click="closeMobileMenu">HISTOIRE</router-link></li>
+        <li><router-link to="/prestations" @click="closeMobileMenu">SAVOIR FAIRE</router-link></li>
         <li><router-link to="/journal-photo" @click="closeMobileMenu">JOURNAL</router-link></li>
-        <li><router-link to="/contact" @click="closeMobileMenu">CONTACT</router-link></li>
+        <li><router-link to="/contact" @click="closeMobileMenu">HELLO</router-link></li>
       </ul>
     </div>
   </nav>
@@ -35,12 +35,13 @@ const isDarkRoute = computed(() => {
 })
 
 const pageIndicator = computed(() => {
-  if (route.path === '/work') return 'WORK (ACCUEIL)'
-  if (route.path === '/work/client') return 'WORK (CLIENT)'
-  if (route.path === '/work/personnel') return 'WORK (PERSONNEL)'
-  if (route.path.startsWith('/work/')) return 'WORK (CLIENT)'
-  if (route.path === '/prestations' || route.path === '/services') return 'PRESTATIONS'
+  if (route.path === '/work') return 'PROJETS (ACCUEIL)'
+  if (route.path === '/work/client') return 'PROJETS (CLIENT)'
+  if (route.path === '/work/personnel') return 'PROJETS (PERSONNEL)'
+  if (route.path.startsWith('/work/')) return 'PROJETS (CLIENT)'
+  if (route.path === '/prestations' || route.path === '/services') return 'SAVOIR FAIRE'
   if (route.path.startsWith('/journal-photo')) return 'JOURNAL'
+  if (route.path === '/contact') return 'HELLO'
   return 'ACCUEIL'
 })
 
@@ -55,10 +56,13 @@ const closeMobileMenu = () => {
 
 <style scoped>
 .navigation {
-  background-color: var(--color-cream);
+  background-color: rgba(235, 231, 222, 0.92);
   color: var(--color-black);
   z-index: 100;
   padding: 0 var(--page-pad);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
 }
 
 .page-indicator {
@@ -70,7 +74,7 @@ const closeMobileMenu = () => {
 }
 
 .navigation.dark {
-  background-color: var(--color-black);
+  background-color: rgba(17, 17, 17, 0.92);
   color: var(--color-off-white);
 }
 
@@ -107,7 +111,7 @@ const closeMobileMenu = () => {
   letter-spacing: 0;
   text-transform: uppercase;
   color: currentColor;
-  opacity: 0.48;
+  opacity: 0.62;
 }
 
 .nav-links a:hover,

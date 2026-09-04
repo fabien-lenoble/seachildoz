@@ -1,9 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import AboutPage from './pages/AboutPage.vue'
+import ConfidentialitePage from './pages/ConfidentialitePage.vue'
 import ContactPage from './pages/ContactPage.vue'
 import HomePage from './pages/HomePage.vue'
 import JournalDetailPage from './pages/JournalDetailPage.vue'
 import JournalPhotoPage from './pages/JournalPhotoPage.vue'
+import MentionsLegalesPage from './pages/MentionsLegalesPage.vue'
+import NotFoundPage from './pages/NotFoundPage.vue'
 import ServicesPage from './pages/ServicesPage.vue'
 import WorkDetailPage from './pages/WorkDetailPage.vue'
 import WorkPage from './pages/WorkPage.vue'
@@ -65,6 +68,21 @@ const routes: RouteRecordRaw[] = [
     path: '/contact',
     component: ContactPage,
     name: 'contact'
+  },
+  {
+    path: '/mentions-legales',
+    component: MentionsLegalesPage,
+    name: 'mentions-legales'
+  },
+  {
+    path: '/confidentialite',
+    component: ConfidentialitePage,
+    name: 'confidentialite'
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFoundPage,
+    name: 'not-found'
   }
 ]
 

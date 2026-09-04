@@ -23,7 +23,7 @@
         </header>
 
         <div class="article-body">
-          <p v-for="paragraph in entry.text" :key="paragraph">{{ paragraph }}</p>
+          <p v-for="paragraph in entry.text" :key="paragraph" v-html="formatParagraph(paragraph)"></p>
         </div>
       </div>
     </article>
@@ -37,6 +37,14 @@ import { journalItems } from '../data/portfolio.ts'
 
 const route = useRoute()
 const entry = computed(() => journalItems.find(item => item.slug === route.params.slug))
+
+// supports **bold**, *italic* and \n line breaks in journal text
+function formatParagraph(text: string) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br />')
+}
 </script>
 
 <style scoped>
@@ -78,7 +86,7 @@ const entry = computed(() => journalItems.find(item => item.slug === route.param
 .content-column {
   border-left: 1px solid rgba(245, 241, 232, 0.26);
   display: grid;
-  gap: 34px;
+  gap: 18px;
   min-width: 0;
   padding-left: 26px;
 }
@@ -86,7 +94,7 @@ const entry = computed(() => journalItems.find(item => item.slug === route.param
 .article-header {
   align-self: start;
   display: grid;
-  gap: 18px;
+  gap: 10px;
 }
 
 .article-header span {
@@ -123,13 +131,24 @@ const entry = computed(() => journalItems.find(item => item.slug === route.param
 .article-body {
   border-top: 1px solid rgba(245, 241, 232, 0.42);
   display: grid;
-  gap: 18px;
-  padding-top: 26px;
+  gap: 24px;
+  padding-top: 16px;
 }
 
 .article-body p {
-  font-size: 14px;
-  line-height: 1.42;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.article-body strong {
+  font-weight: 800;
+  font-size: 1.15em;
+  line-height: 1.35;
+}
+
+.article-body em {
+  color: rgba(245, 241, 232, 0.75);
+  font-style: italic;
 }
 
 .article-gallery {
