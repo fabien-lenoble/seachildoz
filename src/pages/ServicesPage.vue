@@ -19,9 +19,9 @@
     </section>
 
     <section class="tarifs-cta-section">
-      <a
+      <RouterLink
         class="tarifs-cta"
-        href="/#/document/formules-et-tarifs"
+        to="/document/formules-et-tarifs"
         target="_blank"
         rel="noopener"
       >
@@ -30,7 +30,7 @@
           <span>Consulter le détail des offres et accompagnements</span>
         </span>
         <span class="cta-target">Consulter <span aria-hidden="true">→</span></span>
-      </a>
+      </RouterLink>
     </section>
 
     <section class="stats-row">

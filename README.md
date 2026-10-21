@@ -112,7 +112,17 @@ npm run build
 ```
 
 ### Déploiement GitHub Pages
-Le site sera automatiquement deployé sur `https://yourusername.github.io/seachildoz/` lors d'un push sur `main`.
+Le site sera automatiquement deployé sur `https://seachildoz.fr/` lors d'un push sur `main`.
+
+Les routes utilisent des URL sans `#`, par exemple `/work/client`.
+Le serveur de développement Vite gère directement ces routes.
+
+À chaque build, Vite génère une page `404.html` identique à `index.html`.
+GitHub Pages utilise cette page pour charger l'application lorsqu'une route
+est ouverte directement ou rafraîchie. L'URL est conservée, mais la réponse
+HTTP initiale reste une **404**, ce qui constitue une limite pour le référencement.
+Sur un autre hébergeur, configurer une réécriture des routes de l'application
+vers `index.html` avec une réponse HTTP 200, sans réécrire les fichiers statiques.
 
 ## 🎯 Points importants
 
