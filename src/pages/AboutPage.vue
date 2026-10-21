@@ -4,7 +4,7 @@
       <h1>Je crée des<br />images et des<br />univers qui<br />ont du sens</h1>
 
       <div class="crop">
-        <img class="about-section-1-image" :src="clientHeroImage" alt="Portrait Manon" />
+        <img class="about-section-1-image" :src="image1" alt="Portrait de Manon Le Bihan" />
       </div>
       <div class="about-section-1-text-1">
         <div>
@@ -20,11 +20,11 @@
     </section>
 
     <section class="about-body">
-      <h2>Insomnie à tendance artistique alors souvent, je crée des choses.</h2>
+      <h2>Insomnie à tendance artistique : alors souvent, je crée des choses.</h2>
       <div class="body-grid first">
         <img
           class="about-img-1"
-          :src="clientHeroImage"
+          :src="image2"
           alt="SEACHILDOZ"
         />
         <div>
@@ -33,24 +33,27 @@
         <h1>J'AIME QUAND UNE IMAGE SEMBLE ÉVIDENTE, MAIS QU'ON NE SAIT PAS EXACTEMENT POURQUOI.</h1>
       </div>
       <div class="body-grid second">
-        <h1>Créer, c'est donner une forme à ce qui n'en n'avait pas encore</h1>
+        <h1>Créer, c'est donner une forme à ce qui n'en avait pas encore</h1>
         <img
             class="about-img-2"
-            :src="clientHeroImage2"
+            :src="image3"
             alt="SEACHILDOZ"
         />
-        <p>{{ secondText }}</p>
+        <div class="second-text">
+          <p v-for="part in secondText.split('\n')" :key="part">{{ part }}</p>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import clientHeroImage from '../assets/images/gallery/autoportrait 9.jpeg';
-import clientHeroImage2 from '../assets/images/gallery/cheveux aux vents2.jpeg';
+import image1 from '../assets/images/gallery/autoportrait 9.jpeg';
+import image3 from '../assets/images/gallery/coeur lumiere.jpeg';
+import image2 from '../assets/images/gallery/storytelling5.jpeg';
 
-const longText = 'J\'aime les images qui racontent quelque chose, les idées qui décalent un peu le regard et les univers qui ont leur propre personnalité. Mon parcours s\'est construis entre design, image, photographie, vidéo avec une curiosité toujours plus grande pour les nouvelles façon de raconter une histoire.\nJe travaille à la croisée de plusieurs disciplines : identité visuelle, branding, direction artistique, photographie, illustration, contenu et image. Je ne cherche pas forcément à choisir une case, mais plutôt le bon langage pour chaquie projet. Selon les besoins, je peux imaginer un concept, construire un univers, definir une direction visuelle ou passer passer derriere l\'objectif.\nCe qui m\'interesse avant tout, c\'est de creer des univers qui donnent envie de s\'arreter, de regarder, de ressentir. J\'aime mélanger les réferences, les matieres, les époques et les influences pour trouver une esthetiques singuliere, parfois pop, parfois brute, parfois plus sensible. En bref : faire des choses belles, vivantes et un peu différentes.'
-const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime prendre le temps d\'écouter, de comprendre les envies, les besoins et parfois meme les doutes qui se cachent derriere des envies et des projets. Mon rôle est d\'accompagner chacun dans son developpement, en mettant mes compétences et ma sensibilité au service de leurs idées. Communication, identité, stratégie, création, j\'aime intervenir là où c\'est pertinent, créer des passerelles entre les disciplines et apporter des solutions concrètes, toujours pensées pour la personne qui se trouve derriere le projet.'
+const longText = 'J\'aime les images qui racontent quelque chose, les idées qui décalent un peu le regard et les univers qui ont leur propre personnalité. Mon parcours s\'est construit entre design, image, photographie, vidéo avec une curiosité toujours plus grande pour les nouvelles façons de raconter une histoire.\nJe travaille à la croisée de plusieurs disciplines : identité visuelle, branding, direction artistique, photographie, illustration, contenu et image. Je ne cherche pas forcément à choisir une case, mais plutôt le bon langage pour chaque projet. Selon les besoins, je peux imaginer un concept, construire un univers, définir une direction visuelle ou passer derrière l\'objectif.\nCe qui m\'intéresse avant tout, c\'est de créer des univers qui donnent envie de s\'arrêter, de regarder, de ressentir. J\'aime mélanger les références, les matières, les époques et les influences pour trouver une esthétique singulière, parfois pop, parfois brute, parfois plus sensible. En bref : faire des choses belles, vivantes et un peu différentes.'
+const secondText = 'L\'humain est au centre de ma façon de travailler. J\'aime prendre le temps d\'écouter, de comprendre les envies, les besoins et parfois même les doutes qui se cachent derrière des envies et des projets.\nMon rôle est d\'accompagner chacun dans son développement, en mettant mes compétences et ma sensibilité au service de leurs idées.\nCommunication, identité, stratégie, création, j\'aime intervenir là où c\'est pertinent, créer des passerelles entre les disciplines et apporter des solutions concrètes, toujours pensées pour la personne qui se trouve derrière le projet.'
 
 </script>
 
@@ -75,7 +78,7 @@ h1 {
   gap: 64px;
   justify-content: start;
   margin: 52px 0 100px 0;
-  padding: 0 6px;
+  padding: 0;
 }
 
 .crop {
@@ -93,7 +96,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .about-section-1-text-1 div {
@@ -110,7 +113,7 @@ h1 {
   text-transform: uppercase;
   border-bottom: 1px solid var(--color-line);
   padding-bottom: 4px;
-  margin: 36px auto 0 0;
+  margin: 0 auto 0 0;
   letter-spacing: 0.16em;
 }
 
@@ -123,11 +126,11 @@ h1 {
 }
 
 .about-img-1 {
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .about-img-2 {
-  width: 700px;
+  width: 600px;
 }
 
 .path-section {
@@ -258,21 +261,36 @@ h1 {
 
 .body-grid {
   display: flex;
-  align-items: start;
+  align-items: stretch;
   gap: 64px;
   justify-content: start;
   margin-bottom: 100px;
 }
 
-.body-grid.first div {
+.body-grid img {
+  align-self: flex-start;
+}
+
+.body-grid h1 {
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.body-grid.first div,
+.body-grid .second-text {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: space-between;
 }
 
 .body-grid.second {
-  display: flex;
   justify-content: end;
+}
+
+.body-grid.second img {
+  align-self: stretch;
+  object-fit: cover;
 }
 
 .body-grid.second h1 {

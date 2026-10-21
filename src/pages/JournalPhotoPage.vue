@@ -2,7 +2,7 @@
   <div class="page-shell journal-page">
     <section class="journal-head">
       <h1 class="display-title">Journal</h1>
-      <p>Notes d'atelier, fragments visuels, recherches et coulisses de creation.</p>
+      <p>Notes d'atelier, fragments visuels, inspirations, explications, recherches et coulisses de création.</p>
     </section>
 
     <section class="journal-group">
@@ -60,6 +60,21 @@
           </div>
         </router-link>
       </div>
+      <div class="journal-grid grid-four top-five-grid">
+        <router-link
+          v-for="item in groupTopFive"
+          :key="item.slug"
+          class="journal-card"
+          :to="`/journal-photo/${item.slug}`"
+        >
+          <img :src="item.image" :alt="item.title" />
+          <div>
+            <span>{{ item.category }}</span>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+          </div>
+        </router-link>
+      </div>
     </section>
   </div>
 </template>
@@ -71,6 +86,7 @@ import { journalItems } from '../data/portfolio.ts';
 const groupAbout = computed(() => journalItems.slice(0, 2));
 const groupSeachildoz = computed(() => journalItems.slice(2, 5));
 const groupMore = computed(() => journalItems.slice(5, 7));
+const groupTopFive = computed(() => journalItems.slice(7));
 </script>
 
 <style scoped>
@@ -123,6 +139,18 @@ const groupMore = computed(() => journalItems.slice(5, 7));
 
 .grid-three .journal-card {
   min-height: 340px;
+}
+
+.grid-four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-four .journal-card {
+  min-height: 280px;
+}
+
+.top-five-grid {
+  margin-top: 10px;
 }
 
 .journal-card {
@@ -182,13 +210,15 @@ const groupMore = computed(() => journalItems.slice(5, 7));
   }
 
   .grid-two,
-  .grid-three {
+  .grid-three,
+  .grid-four {
     grid-template-columns: 1fr;
   }
 
   .journal-card,
   .grid-two .journal-card,
-  .grid-three .journal-card {
+  .grid-three .journal-card,
+  .grid-four .journal-card {
     min-height: 300px;
   }
 }

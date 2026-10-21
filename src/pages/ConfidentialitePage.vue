@@ -92,8 +92,7 @@
 
 <style scoped>
 .legal {
-  padding-top: 12px;
-  padding-bottom: 80px;
+  padding: 12px var(--page-pad) 80px;
 }
 
 h1 {

@@ -1,43 +1,18 @@
 <template>
   <div class="home-page">
     <section class="hero">
-      <div class="hero-copy">
-        <h1 class="hero-title">
-          DIRECTION<br /> ARTISTIQUE,<br />
-          IDENTITÉ<br /> VISUELLE,<br />
-          IMAGE
-        </h1>
-        <p class="hero-subtitle">Je construis des univers visuels sensibles &amp; singuliers.</p>
+      <div class="hero-collage" aria-hidden="true">
+        <div class="hero-photo">
+          <img :src="heroPhoto" alt="" />
+        </div>
       </div>
 
-      <div class="hero-collage" aria-hidden="true">
-        <div class="polaroid polaroid-a">
-          <img
-            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80"
-            alt=""
-          />
-        </div>
-        <div class="polaroid polaroid-b">
-          <img
-            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=700&q=80"
-            alt=""
-          />
-        </div>
-        <div class="polaroid polaroid-c">
-          <img
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80"
-            alt=""
-          />
-        </div>
-        <span class="tape tape-1"></span>
-        <span class="tape tape-2"></span>
-        <svg class="twig" viewBox="0 0 80 120" fill="none">
-          <path d="M40 110 V18" stroke="#2a3a28" stroke-width="3" />
-          <path d="M40 30 L18 18 M40 42 L62 28 M40 54 L16 44 M40 66 L64 52 M40 78 L20 70 M40 90 L58 80" stroke="#355034" stroke-width="3" stroke-linecap="round" />
-        </svg>
-        <svg class="bolt" viewBox="0 0 60 90" fill="none">
-          <path d="M34 2 L8 48 H30 L18 88 L54 36 H32 L46 2 Z" fill="#f0d24a" stroke="#111" stroke-width="1.2" />
-        </svg>
+      <div class="hero-copy">
+        <h1 class="hero-title">
+          <span class="hero-title-main">CRÉATRICE</span>
+          <span class="hero-title-secondary">D'HISTOIRES &amp; D'IMAGES</span>
+        </h1>
+        <p class="hero-subtitle">Construire des univers visuels sensibles &amp; singuliers.</p>
       </div>
     </section>
 
@@ -45,7 +20,7 @@
       <router-link to="/work/client" class="univers-card">
         <img
           class="univers-photo"
-          src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
+          :src="clientUniversePhoto"
           alt=""
           aria-hidden="true"
         />
@@ -58,13 +33,13 @@
       <router-link to="/work/personnel" class="univers-card">
         <img
           class="univers-photo"
-          src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=80"
+          :src="personalUniversePhoto"
           alt=""
           aria-hidden="true"
         />
         <div>
           <h2>UNIVERS PERSONNEL</h2>
-          <p>Photographies personnelles, portraits, editorial, fine art, expositions.</p>
+          <p>Photographies personnelles, portraits, éditorial, fine art, expositions.</p>
         </div>
         <span class="univers-arrow" aria-hidden="true">→</span>
       </router-link>
@@ -107,53 +82,43 @@
 
     <section class="portfolio">
       <div class="portfolio-grid">
-        <router-link
+        <article
           v-for="item in highlights"
           :key="item.label"
-          :to="item.to"
           class="portfolio-item"
         >
           <img :src="item.image" :alt="item.label" />
           <span class="script-label">{{ item.label }}</span>
-        </router-link>
+        </article>
       </div>
       <router-link to="/work" class="voir-plus">VOIR PLUS</router-link>
     </section>
+
+    <Testimonials />
+    <ClientLogos />
   </div>
 </template>
 
 <script setup>
+import ClientLogos from '../components/ClientLogos.vue';
+import Testimonials from '../components/Testimonials.vue';
+import personalUniversePhoto from '../assets/images/gallery/mains lumiere 5.jpeg';
+import heroPhoto from '../assets/images/gallery/nb champs.png';
+import artDirectionImage from '../assets/images/gallery/STOCK/12.png';
+import storiesImage from '../assets/images/gallery/STOCK/14.png';
+import videoImage from '../assets/images/gallery/STOCK/15.png';
+import illustrationImage from '../assets/images/gallery/STOCK/17.png';
+import photoImage from '../assets/images/gallery/STOCK/2.png';
+import brandingImage from '../assets/images/gallery/STOCK/5.png';
+import clientUniversePhoto from '../assets/images/gallery/UNIVERS CLIENT/LOGOS/Creativeshop_Mockup_2.png';
+
 const highlights = [
-  {
-    label: 'PHOTO',
-    to: '/work/1',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    label: 'BRANDING',
-    to: '/work/2',
-    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    label: 'ART DIRECTION',
-    to: '/work/3',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    label: 'ILLUSTRATION',
-    to: '/work/4',
-    image: 'https://images.unsplash.com/photo-1490750967868-88aa4c76f0f4?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    label: 'VIDEO',
-    to: '/work/5',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    label: 'STORIES',
-    to: '/journal-photo',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80'
-  }
+  { label: 'PHOTO', image: photoImage },
+  { label: 'BRANDING', image: brandingImage },
+  { label: 'ART DIRECTION', image: artDirectionImage },
+  { label: 'ILLUSTRATION', image: illustrationImage },
+  { label: 'VIDEO', image: videoImage },
+  { label: 'STORIES', image: storiesImage }
 ]
 </script>
 
@@ -164,13 +129,13 @@ const highlights = [
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 24px;
+  position: relative;
+  display: flex;
   align-items: center;
-  margin: 0 auto;
-  padding: 28px 140px 48px;
-  min-height: 72vh;
+  min-height: 82vh;
+  overflow: hidden;
+  padding: 0 var(--page-pad);
+  color: var(--color-off-white);
 }
 
 .hero-title {
@@ -183,101 +148,58 @@ const highlights = [
   padding-bottom: 32px;
 }
 
+.hero-title-main,
+.hero-title-secondary {
+  display: block;
+}
+
+.hero-title-main {
+  font-size: 1.35em;
+  line-height: 0.9;
+}
+
+.hero-title-secondary {
+  font-size: 0.48em;
+  line-height: 1.1;
+  margin-top: 18px;
+}
+
 .hero-subtitle {
   margin-top: 22px;
   font-size: 16px;
   max-width: 420px;
 }
 
-.hero-collage {
+.hero-copy {
   position: relative;
-  height: 560px;
-}
-
-.polaroid {
-  position: absolute;
-  background: #fff;
-  padding: 10px 10px 28px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-}
-
-.polaroid img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.polaroid-a {
-  width: 250px;
-  height: 310px;
-  top: 18px;
-  left: 18%;
-  transform: rotate(-8deg);
   z-index: 2;
 }
 
-.polaroid-b {
-  width: 230px;
-  height: 250px;
-  top: 210px;
-  left: 4%;
-  transform: rotate(7deg);
+.hero-collage {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-collage::after {
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.72) 0%, rgba(17, 17, 17, 0.32) 55%, rgba(17, 17, 17, 0.18) 100%);
+  content: '';
+  inset: 0;
+  position: absolute;
   z-index: 1;
 }
 
-.polaroid-c {
-  width: 220px;
-  height: 270px;
-  top: 200px;
-  right: 6%;
-  transform: rotate(-3deg);
-  z-index: 3;
+.hero-photo {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
-.tape {
-  position: absolute;
-  width: 78px;
-  height: 22px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(232, 214, 170, 0.85) 0 8px,
-    rgba(245, 236, 214, 0.75) 8px 16px
-  );
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-  z-index: 5;
-}
-
-.tape-1 {
-  top: 8px;
-  left: 38%;
-  transform: rotate(-18deg);
-}
-
-.tape-2 {
-  top: 188px;
-  right: 18%;
-  transform: rotate(22deg);
-}
-
-.twig {
-  position: absolute;
-  width: 70px;
-  height: 110px;
-  top: 120px;
-  left: 8%;
-  z-index: 6;
-  transform: rotate(-18deg);
-}
-
-.bolt {
-  position: absolute;
-  width: 48px;
-  height: 72px;
-  bottom: 70px;
-  right: 12%;
-  z-index: 6;
-  transform: rotate(8deg);
+.hero-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .univers {
@@ -468,8 +390,11 @@ const highlights = [
     grid-template-columns: 1fr;
   }
 
-  .hero-collage {
-    height: 460px;
+  .hero {
+    display: flex;
+    min-height: 60vh;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .univers-card:first-child {
@@ -489,13 +414,6 @@ const highlights = [
 @media (max-width: 600px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-
-  .polaroid-a,
-  .polaroid-b,
-  .polaroid-c {
-    width: 180px;
-    height: 220px;
   }
 }
 </style>

@@ -9,7 +9,7 @@
         </figure>
 
         <section class="article-gallery" aria-label="Images de l'article">
-          <figure v-for="(image, index) in entry.images.slice(1)" :key="image" :class="`gallery-image image-${index}`">
+          <figure v-for="(image, index) in entry.images.slice(1)" :key="image" class="gallery-image">
             <img :src="image" :alt="`${entry.title} ${index + 2}`" />
           </figure>
         </section>
@@ -23,7 +23,15 @@
         </header>
 
         <div class="article-body">
-          <p v-for="paragraph in entry.text" :key="paragraph" v-html="formatParagraph(paragraph)"></p>
+          <p
+            v-for="paragraph in entry.text"
+            :key="paragraph"
+            :class="{
+              'article-section-title': isSectionTitle(paragraph),
+              'article-cv-entry': isCvEntry(paragraph)
+            }"
+            v-html="formatParagraph(paragraph)"
+          ></p>
         </div>
       </div>
     </article>
@@ -41,9 +49,20 @@ const entry = computed(() => journalItems.find(item => item.slug === route.param
 // supports **bold**, *italic* and \n line breaks in journal text
 function formatParagraph(text: string) {
   return text
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong class="inline-label"><em>$1</em></strong>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/\n/g, '<br />')
+}
+
+function isSectionTitle(text: string) {
+  return text === '**EXPÉRIENCES PROFESSIONNELLES**' || text === '**FORMATIONS**'
+}
+
+function isCvEntry(text: string) {
+  return entry.value?.slug === 'cv-et-experiences-professionnelles'
+    && text.startsWith('**')
+    && !isSectionTitle(text)
 }
 </script>
 
@@ -61,26 +80,21 @@ function formatParagraph(text: string) {
 }
 
 .journal-detail {
+  align-items: start;
   display: grid;
   column-gap: 44px;
   grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 0.78fr);
   position: relative;
 }
 
-.journal-detail::before {
-  background: rgba(245, 241, 232, 0.26);
-  content: '';
-  height: 100%;
-  left: calc((100% - 44px) * 0.535);
-  position: absolute;
-  top: 0;
-  width: 1px;
-}
-
 .media-column {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  height: calc(100vh - 150px);
   min-width: 0;
+  position: sticky;
+  top: 130px;
 }
 
 .content-column {
@@ -115,8 +129,10 @@ function formatParagraph(text: string) {
 }
 
 .lead-image {
-  aspect-ratio: 1.02 / 1;
+  aspect-ratio: auto;
+  flex: 1 1 auto;
   margin: 0;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -140,46 +156,66 @@ function formatParagraph(text: string) {
   line-height: 1.7;
 }
 
-.article-body strong {
+.article-body .article-section-title {
+  border-bottom: 2px solid currentColor;
+  font-size: 26px;
+  line-height: 1.1;
+  margin: 8px 0 8px;
+  padding-bottom: 10px;
+}
+
+.article-body .article-cv-entry :deep(strong:first-child) {
+  display: inline-block;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.article-body :deep(strong) {
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.35;
 }
 
-.article-body em {
+.article-body :deep(.inline-label) {
+  font-size: 1em;
+}
+
+.article-body :deep(em) {
   color: rgba(245, 241, 232, 0.75);
   font-style: italic;
 }
 
 .article-gallery {
   display: grid;
+  flex: 0 0 auto;
   gap: 10px;
-  grid-template-columns: 1fr 0.72fr;
+  grid-auto-rows: clamp(110px, 15vh, 170px);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .gallery-image {
-  aspect-ratio: 1 / 1.12;
   margin: 0;
   overflow: hidden;
 }
 
-.image-0 {
-  min-height: 420px;
-}
-
-.image-1 {
-  align-self: end;
-  min-height: 310px;
-}
-
 @media (max-width: 760px) {
-  .journal-detail,
-  .article-gallery {
+  .journal-detail {
     grid-template-columns: 1fr;
+    row-gap: 28px;
   }
 
-  .journal-detail::before {
-    display: none;
+  .media-column {
+    max-height: none;
+    position: static;
+  }
+
+  .lead-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .article-gallery {
+    grid-auto-rows: 150px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .article-header {
@@ -195,11 +231,6 @@ function formatParagraph(text: string) {
   .article-body {
     grid-column: 1;
     padding-left: 0;
-  }
-
-  .image-0,
-  .image-1 {
-    min-height: 280px;
   }
 }
 </style>

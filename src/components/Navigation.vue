@@ -3,7 +3,7 @@
     <div class="page-indicator">{{ pageIndicator }}</div>
     <div class="nav-container">
       <router-link to="/" class="nav-logo" @click="closeMobileMenu">
-        MANON<br />LE BIHAN
+        MANON LE BIHAN<span class="nav-dot" aria-hidden="true">•</span>SEACHILDOZ STUDIO
       </router-link>
 
       <button class="nav-toggle" type="button" :aria-expanded="mobileMenuOpen" @click="toggleMenu">
@@ -35,6 +35,7 @@ const isDarkRoute = computed(() => {
 })
 
 const pageIndicator = computed(() => {
+  if (route.path === '/') return 'ACCUEIL'
   if (route.path === '/work') return 'PROJETS (ACCUEIL)'
   if (route.path === '/work/client') return 'PROJETS (CLIENT)'
   if (route.path === '/work/personnel') return 'PROJETS (PERSONNEL)'
@@ -42,7 +43,11 @@ const pageIndicator = computed(() => {
   if (route.path === '/prestations' || route.path === '/services') return 'SAVOIR FAIRE'
   if (route.path.startsWith('/journal-photo')) return 'JOURNAL'
   if (route.path === '/contact') return 'HELLO'
-  return 'ACCUEIL'
+  if (route.path === '/about') return 'HISTOIRE'
+  if (route.path === '/mentions-legales') return 'MENTIONS LÉGALES'
+  if (route.path === '/confidentialite') return 'CONFIDENTIALITÉ'
+  if (route.path.startsWith('/document/')) return 'DOCUMENT'
+  return 'PAGE INTROUVABLE'
 })
 
 const toggleMenu = () => {
@@ -83,17 +88,28 @@ const closeMobileMenu = () => {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 4px;
   margin: 0 auto;
   padding: 18px 0px;
 }
 
 .nav-logo {
+  white-space: nowrap;
+  flex-shrink: 0;
   font-family: var(--font-barlow);
-  font-size: clamp(30px, 3.5vw, 40px);
+  font-size: clamp(44px, 4.6vw, 60px);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 0.98;
   text-transform: uppercase;
+}
+
+.nav-dot {
+  font-size: 0.55em;
+  margin: 0 0.8em;
+  vertical-align: middle;
 }
 
 .nav-links {
@@ -101,7 +117,9 @@ const closeMobileMenu = () => {
   display: flex;
   gap: clamp(22px, 3.1vw, 40px);
   list-style: none;
-  padding-top: 18px;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 6px;
 }
 
 .nav-links a {
@@ -162,7 +180,10 @@ const closeMobileMenu = () => {
 
   .nav-logo {
     font-size: 30px;
-    line-height: 0.98;
+    line-height: 1.1;
+    white-space: normal;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .nav-toggle {
@@ -171,12 +192,12 @@ const closeMobileMenu = () => {
 
   .nav-links {
     position: absolute;
-    top: 124px;
+    top: 100%;
     left: 20px;
     right: 20px;
     flex-direction: column;
     gap: 16px;
-    background-color: currentColor;
+    background-color: var(--color-black);
     color: var(--color-cream);
     padding: 0 20px;
     max-height: 0;

@@ -1,8 +1,8 @@
 <template>
   <div class="page-shell prestations-page">
     <section class="prestations-intro">
-      <h1 class="display-title">Prestations</h1>
-      <p>Direction artistique, image et identite pour donner une forme claire aux projets, aux marques et aux histoires.</p>
+      <h1 class="display-title">Savoir Faire</h1>
+      <p>Direction artistique, image et identité pour donner une forme claire aux projets, aux marques et aux histoires.</p>
     </section>
 
     <section class="prestations-grid">
@@ -21,31 +21,29 @@
     <section class="tarifs-cta-section">
       <a
         class="tarifs-cta"
-        href="/documents/formule-et-tarifs.pdf"
+        href="/#/document/formules-et-tarifs"
         target="_blank"
         rel="noopener"
       >
         <span class="cta-copy">
-          <strong>Formule & tarifs</strong>
-          <span>Consulter le detail des offres et accompagnements</span>
+          <strong>Formules & tarifs</strong>
+          <span>Consulter le détail des offres et accompagnements</span>
         </span>
-        <span class="cta-target">Telecharger <span aria-hidden="true">→</span></span>
+        <span class="cta-target">Consulter <span aria-hidden="true">→</span></span>
       </a>
     </section>
 
-    <footer class="prestations-footer">
-      <section class="stats-band">
-        <div>
-          <strong>10+</strong>
-          <span>Annees d'experience</span>
-        </div>
-        <div>
-          <strong>100+</strong>
-          <span>Projets realises</span>
-        </div>
-        <p>Des marques, des artistes,<br />des entrepreneurs,<br />des rencontres.</p>
-      </section>
-    </footer>
+    <section class="stats-row">
+      <div class="stat">
+        <strong>10+</strong>
+        <span>Années d'expérience</span>
+      </div>
+      <div class="stat">
+        <strong>100+</strong>
+        <span>Projets réalisés</span>
+      </div>
+      <p class="stats-note">Des marques, des artistes, des entrepreneurs, des rencontres.</p>
+    </section>
   </div>
 </template>
 
@@ -160,9 +158,12 @@ import { services } from '../data/portfolio.ts';
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.tarifs-cta:hover {
-  background: var(--color-black);
-  color: var(--color-off-white);
+.tarifs-cta:hover .cta-copy strong {
+  color: var(--color-brown);
+}
+
+.tarifs-cta:hover .cta-target {
+  opacity: 0.6;
 }
 
 .tarifs-cta .cta-copy {
@@ -200,51 +201,48 @@ import { services } from '../data/portfolio.ts';
   margin-top: 0;
 }
 
-.prestations-footer {
-  margin: 0 calc(var(--page-pad) * -1);
-}
-
-.stats-band {
+.stats-row {
   align-items: center;
-  background: linear-gradient(135deg, var(--color-black) 0%, #2c2c2c 100%);
-  color: var(--color-off-white);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  min-height: 186px;
-  padding: 34px var(--page-pad);
-  text-align: left;
+  gap: 24px;
+  grid-template-columns: auto auto 1fr;
+  padding: 56px 0 64px;
 }
 
-.stats-band > div,
-.stats-band > p {
-  padding-left: 10px;
+.stat {
+  align-items: center;
+  border-left: 2px solid var(--color-black);
+  display: flex;
+  gap: 10px;
+  padding-left: 22px;
 }
 
-.stats-band strong {
-  display: block;
+.stat strong {
   font-family: var(--font-barlow);
-  font-size: clamp(42px, 4vw, 62px);
-  letter-spacing: 0.09em;
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: 0.02em;
   line-height: 1;
 }
 
-.stats-band span {
-  display: block;
-  font-size: 13px;
-  margin-top: 10px;
+.stat span {
+  color: var(--color-muted);
+  font-size: 12px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.stats-band p {
-  justify-self: start;
-  line-height: 1.7;
-  text-align: left;
+.stats-note {
+  justify-self: end;
+  line-height: 1.6;
+  max-width: none;
+  text-align: right;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
   .prestations-intro,
   .prestations-grid,
-  .stats-band,
+  .stats-row,
   .tarifs-cta {
     grid-template-columns: 1fr;
   }
@@ -264,13 +262,19 @@ import { services } from '../data/portfolio.ts';
     justify-content: flex-start;
   }
 
-  .stats-band {
-    gap: 32px;
+  .stats-row {
+    gap: 24px;
     text-align: left;
   }
 
-  .stats-band p {
+  .stat {
+    padding-left: 16px;
+  }
+
+  .stats-note {
     justify-self: start;
+    text-align: left;
+    white-space: normal;
   }
 }
 </style>

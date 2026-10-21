@@ -8,14 +8,13 @@
 
       <div class="footer-section">
         <h3>MANON LE BIHAN</h3>
-        <p>Directrice Artistique &amp;<br />creative multidisciplinaire</p>
+        <p>Directrice artistique &amp;<br />créative multidisciplinaire</p>
         <p>{{ site.city }}</p>
       </div>
 
       <div class="footer-section">
         <h4>CONTACT</h4>
         <ul>
-          <li><a :href="`mailto:${site.email}`">{{ site.email }}</a></li>
           <li><a :href="site.whatsapp" target="_blank" rel="noopener">Whatsapp</a></li>
           <li><a :href="site.linkedin" target="_blank" rel="noopener">Linkedin</a></li>
           <li><a :href="site.instagram" target="_blank" rel="noopener">Instagram</a></li>

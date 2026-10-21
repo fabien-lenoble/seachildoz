@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import AboutPage from './pages/AboutPage.vue'
 import ConfidentialitePage from './pages/ConfidentialitePage.vue'
 import ContactPage from './pages/ContactPage.vue'
+import DocumentPage from './pages/Document.vue'
 import HomePage from './pages/HomePage.vue'
 import JournalDetailPage from './pages/JournalDetailPage.vue'
 import JournalPhotoPage from './pages/JournalPhotoPage.vue'
@@ -78,6 +79,11 @@ const routes: RouteRecordRaw[] = [
     path: '/confidentialite',
     component: ConfidentialitePage,
     name: 'confidentialite'
+  },
+  {
+    path: '/document/:file',
+    component: DocumentPage,
+    name: 'document'
   },
   {
     path: '/:pathMatch(.*)*',
